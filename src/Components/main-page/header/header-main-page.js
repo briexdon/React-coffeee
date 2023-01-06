@@ -7,6 +7,7 @@ class HeaderMainPage extends Component {
     return (
       <>
         <h1>hello World</h1>
+        <h2>hello again</h2>
       </>
     );
   }
