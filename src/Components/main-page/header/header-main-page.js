@@ -2,7 +2,7 @@ import { Component } from "react";
 
 import "./header-main-page.css";
 
-import coffeeBeans from "../../../icons/main-page/coffee-beans.png";
+import whiteCoffeeBeans from "../../../icons/main-page/coffee-beans.png";
 import whiteBeansLogo from "../../../icons/main-page/beans-logo.png";
 
 class HeaderMainPage extends Component {
@@ -11,7 +11,7 @@ class HeaderMainPage extends Component {
       <header className="header-main-page">
         <nav className="header-pages">
           <div className="coffee-house">
-            <img src={coffeeBeans} alt="coffee-beans_white" />
+            <img src={whiteCoffeeBeans} alt="coffee-beans_white" />
             <a href="#">Coffee house</a>
           </div>
           <div className="our-coffee">

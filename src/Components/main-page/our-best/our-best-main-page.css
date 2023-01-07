@@ -1,0 +1,67 @@
+.our-best {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("../../../icons/main-page/paper-bg.jpg");
+  background-size: cover;
+  height: 495px;
+  padding-bottom: 100px;
+}
+
+.our-best-title {
+  margin-top: 110px;
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+  color: #000000;
+}
+
+.our-best-goods {
+  display: flex;
+  flex-direction: row;
+  margin-top: 59px;
+}
+.our-best-goods > div {
+  height: 240px;
+  width: 220px;
+  padding: 22px 20px 22px 23px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.our-best-goods > div > img {
+  margin-top: 25px;
+  min-height: 140px;
+}
+.best-coffee-2 {
+  margin-left: 71px;
+  margin-right: 71px;
+}
+
+.best-coffee-name {
+  margin-top: 20px;
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
+.best-coffee-price {
+  align-self: end;
+  margin-top: 15px;
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
