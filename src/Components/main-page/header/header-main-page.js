@@ -2,7 +2,6 @@ import { Component } from "react";
 
 import "./header-main-page.css";
 
-import headerBg from "../../../icons/main-page/header-bg.jpg";
 import coffeeBeans from "../../../icons/main-page/coffee-beans.png";
 import whiteBeansLogo from "../../../icons/main-page/beans-logo.png";
 
@@ -10,7 +9,6 @@ class HeaderMainPage extends Component {
   render() {
     return (
       <header className="header-main-page">
-        <img src={headerBg} alt="header-bg" />
         <nav className="header-pages">
           <div className="coffee-house">
             <img src={coffeeBeans} alt="coffee-beans_white" />
@@ -24,7 +22,7 @@ class HeaderMainPage extends Component {
           </div>
         </nav>
         <div className="header-descr">
-          <div className="header-title">Everything You Love About Coffee</div>
+          <h1 className="header-title">Everything You Love About Coffee</h1>
           <img src={whiteBeansLogo} alt="white-beans-logo" />
           <div className="header-text">
             We makes every day full of energy and taste <br /> Want to try our beans?
