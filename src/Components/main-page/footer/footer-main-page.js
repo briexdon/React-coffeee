@@ -10,11 +10,11 @@ class Footer extends Component {
     return (
       <footer className="footer-main-page">
         <nav className="footer-pages">
-          <div className="coffee-house">
+          <div className="footer-coffee-house">
             <img src={blackCoffeeBeans} alt="coffee-beans_black" />
             <a href="#">Coffee house</a>
           </div>
-          <div className="our-coffee">
+          <div className="footer-our-coffee">
             <a href="#">Our coffee</a>
           </div>
           <div className="for-your-pleasure">

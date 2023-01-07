@@ -14,7 +14,7 @@ class HeaderMainPage extends Component {
             <img src={whiteCoffeeBeans} alt="coffee-beans_white" />
             <a href="#">Coffee house</a>
           </div>
-          <div className="our-coffee">
+          <div className="header-our-coffee">
             <a href="#">Our coffee</a>
           </div>
           <div className="for-your-pleasure">

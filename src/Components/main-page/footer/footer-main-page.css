@@ -30,9 +30,10 @@
   font-size: 12px;
   line-height: 17px;
   color: #ffffff;
+  text-decoration: none;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.our-coffee {
+.footer-our-coffee {
   margin-left: 40px;
   margin-right: 40px;
 }

@@ -1,0 +1,40 @@
+.header-secondary {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("../../icons/header-another-pages.png");
+}
+
+.header-pages_secondary {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  align-items: end;
+  margin-top: 50px;
+  margin-left: 149px;
+}
+.header-pages_secondary > div > a {
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.our-coffee_secondary {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.header-title_secondary {
+  margin-top: 60px;
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 58px;
+  color: #ffffff;
+}
