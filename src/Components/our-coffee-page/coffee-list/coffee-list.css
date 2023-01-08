@@ -1,0 +1,67 @@
+.coffee-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 61px;
+}
+.coffee-item-row {
+  display: flex;
+  flex-direction: row;
+}
+.coffee-item-row > div:nth-child(2) {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+.coffee-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: auto;
+  margin-bottom: 60px;
+  padding: 37px 27px 22px 26px;
+  width: 220px;
+  height: 260px;
+  box-shadow: 5px 5px 13px 3px rgba(0, 0, 0, 0.1);
+  border: solid 2px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  cursor: pointer;
+}
+.coffee-item > img {
+  width: 167px;
+  height: 115px;
+  align-self: center;
+}
+
+.coffee-item-name {
+  margin-top: 14px;
+  align-self: center;
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
+.coffeee-item-type {
+  margin-top: 14px;
+  align-self: end;
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  color: #000000;
+}
+.coffee-item-price {
+  margin-top: 14px;
+  align-self: end;
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}

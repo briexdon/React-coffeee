@@ -1,14 +1,14 @@
 import { Component } from "react";
 
-import "./footer-main-page.css";
+import "./footer.css";
 
-import blackCoffeeBeans from "../../../icons/main-page/coffee-beans.png";
-import blackBeansLogo from "../../../icons/main-page/beans-logo.png";
+import blackCoffeeBeans from "../../icons/main-page/coffee-beans.png";
+import blackBeansLogo from "../../icons/main-page/beans-logo.png";
 
 class Footer extends Component {
   render() {
     return (
-      <footer className="footer-main-page">
+      <footer className="footer">
         <nav className="footer-pages">
           <div className="footer-coffee-house">
             <img src={blackCoffeeBeans} alt="coffee-beans_black" />
