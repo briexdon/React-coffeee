@@ -1,35 +1,36 @@
 .footer {
   background: #ffffff;
-  padding-top: 30px;
   padding-bottom: 21px;
+  padding-top: 30px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
 }
+.footer-coffee-house > img {
+  filter: brightness(0);
+}
 .footer > img {
   margin-top: 41px;
   filter: brightness(0);
 }
-.footer-pages > div {
-  filter: brightness(0);
-}
+
 .footer-pages {
   display: flex;
   flex-direction: row;
   align-items: end;
-  margin-top: 50px;
+  margin-top: 30px;
   scale: 1.1;
 }
 .footer-pages > div > a {
+  text-decoration: none;
   font-family: "Merienda";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
-  text-decoration: none;
-  color: #8f8888;
+  color: #000000;
 }
 .footer-our-coffee {
   margin-left: 40px;

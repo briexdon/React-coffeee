@@ -3,21 +3,44 @@
   flex-direction: column;
   align-items: center;
   margin-top: 61px;
+  overflow-y: scroll;
+  height: 750px;
+  width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.coffee-list::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.coffee-list::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); /* color of the tracking area */
+}
+
+.coffee-list::-webkit-scrollbar-thumb {
+  background-color: rgb(190, 190, 190); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
 .coffee-item-row {
   display: flex;
   flex-direction: row;
+  margin-bottom: 60px;
 }
+
 .coffee-item-row > div:nth-child(2) {
   margin-left: 70px;
   margin-right: 70px;
+}
+.coffee-item-row:last-child {
+  margin-bottom: 0;
 }
 .coffee-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-basis: auto;
-  margin-bottom: 60px;
   padding: 37px 27px 22px 26px;
   width: 220px;
   height: 260px;
