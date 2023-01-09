@@ -80,3 +80,6 @@
   border-radius: 3px;
   cursor: pointer;
 }
+.header-btn > a {
+  color: #ffffff;
+}
