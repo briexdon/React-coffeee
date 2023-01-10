@@ -34,13 +34,14 @@
   margin-right: 70px;
 }
 .coffee-item-row:last-child {
-  margin-bottom: 0;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  margin-left: 33px;
 }
 .coffee-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-basis: auto;
   padding: 37px 27px 22px 26px;
   width: 220px;
   height: 260px;
@@ -66,7 +67,7 @@
   text-align: center;
   color: #000000;
 }
-.coffeee-item-type {
+.coffeee-item-country {
   margin-top: 14px;
   align-self: end;
   font-family: "Merienda";

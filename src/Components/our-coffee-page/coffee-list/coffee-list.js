@@ -1,94 +1,50 @@
 import "./coffee-list.css";
-import coffee from "../../../icons/main-page/coffee-3.png";
+import { Component } from "react";
 
-function CoffeeList() {
-  return (
-    <section className="coffee-list">
-      <div className="coffee-item-row">
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Brazil</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Kenya</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Columbia</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-      </div>
+import coffeeData from "../../myCoffeeData";
 
-      <div className="coffee-item-row">
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Brazil</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Kenya</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Columbia</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-      </div>
+class CoffeeList extends Component {
+  state = {
+    data: coffeeData,
+  };
 
-      <div className="coffee-item-row">
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Brazil</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Kenya</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Columbia</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-      </div>
+  showCoffee = (data) => {
+    const coffeeGoods = [];
+    let local = [];
 
-      <div className="coffee-item-row">
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Brazil</div>
-          <div className="coffee-item-price">6.99$</div>
+    for (let i = 0; i < data.length; i++) {
+      let coffeeContent = (
+        <div key={i} className="coffee-item">
+          <img src={data[i].image} alt="coffee" />
+          <div className="coffee-item-name">{data[i].name}</div>
+          <div className="coffeee-item-country">{data[i].country}</div>
+          <div className="coffee-item-price">{data[i].price}$</div>
         </div>
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Kenya</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-        <div className="coffee-item">
-          <img src={coffee} alt="coffee" />
-          <div className="coffee-item-name">AROMISTICO Coffee 1 kg</div>
-          <div className="coffeee-item-type">Columbia</div>
-          <div className="coffee-item-price">6.99$</div>
-        </div>
-      </div>
-    </section>
-  );
+      );
+
+      local.push(coffeeContent);
+
+      if (local.length > 2 || i === data.length - 1) {
+        const row = (
+          <div key={i} className="coffee-item-row">
+            {local}
+          </div>
+        );
+        coffeeGoods.push(row);
+        local = [];
+      }
+    }
+
+    return coffeeGoods;
+  };
+  render() {
+    const { data } = this.state;
+    return (
+      <section className="coffee-list">
+        {this.showCoffee(this.props.visibleData(data, this.props.globalTerm))}
+      </section>
+    );
+  }
 }
 
 export default CoffeeList;

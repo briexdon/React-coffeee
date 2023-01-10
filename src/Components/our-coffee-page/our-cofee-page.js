@@ -6,21 +6,42 @@ import Footer from "../footer/footer";
 
 import coffeeImage from "../../icons/our-coffee-page/coffee-1.jpg";
 
-function OurCoffeePage() {
-  const aboutText = {
-    p1: "Another new text that i created for the test. The next one is the same do sont worry and have fun.",
-    p2: "Afraid at highly months do things on at. Situation recommend objection do intention so questions",
-    brP2: "As greatly removed calling pleased improve an. Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song that held help face.",
+import coffeeData from "../myCoffeeData";
+
+import { Component } from "react";
+
+class OurCoffeePage extends Component {
+  state = {
+    data: coffeeData,
+    search: "",
   };
-  return (
-    <>
-      <HeaderSecondaryPages></HeaderSecondaryPages>
-      <AboutCoffeePage aboutCoffeeImmg={coffeeImage} text={aboutText}></AboutCoffeePage>
-      <SearchAndFilter></SearchAndFilter>
-      <CoffeeList></CoffeeList>
-      <Footer></Footer>
-    </>
-  );
+
+  updateGlobaTerm = (search) => {
+    this.setState({ search: search });
+  };
+
+  showGoodsFromSearch = (data, search) => {
+    const test = data.filter((elem) => elem.name.indexOf(search) > -1);
+    return test;
+  };
+
+  render() {
+    const { data, search } = this.state;
+    const aboutText = {
+      p1: "Another new text that i created for the test. The next one is the same do sont worry and have fun.",
+      p2: "Afraid at highly months do things on at. Situation recommend objection do intention so questions",
+      brP2: "As greatly removed calling pleased improve an. Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song that held help face.",
+    };
+    return (
+      <>
+        <HeaderSecondaryPages></HeaderSecondaryPages>
+        <AboutCoffeePage aboutCoffeeImmg={coffeeImage} text={aboutText}></AboutCoffeePage>
+        <SearchAndFilter updateGlobaTerm={this.updateGlobaTerm}></SearchAndFilter>
+        <CoffeeList globalTerm={search} visibleData={this.showGoodsFromSearch}></CoffeeList>
+        <Footer></Footer>
+      </>
+    );
+  }
 }
 
 export default OurCoffeePage;
