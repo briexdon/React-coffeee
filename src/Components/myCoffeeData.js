@@ -11,17 +11,17 @@ import coffee10 from "../icons/coffee-goods/coffee-10.jpg";
 import coffee11 from "../icons/coffee-goods/coffee-11.jpg";
 
 const coffeeData = [
-  { name: "Espresso Coffee", country: "Brazil", price: 6.99, image: coffee1 },
-  { name: "Americano Coffee", country: "Kenya", price: 10.25, image: coffee2 },
-  { name: "Espresso Lungo Coffee", country: "Kenya", price: 11, image: coffee3 },
-  { name: "Ristretto Coffee", country: "Columbia", price: 5, image: coffee4 },
-  { name: "Cafe Au Lait Coffee", country: "Brazil", price: 22, image: coffee5 },
-  { name: "Cappuccino Coffee", country: "Brazil", price: 16.4, image: coffee6 },
-  { name: "Flat White Coffee", country: "Columbia", price: 12.5, image: coffee7 },
-  { name: "Macchiato Coffee", country: "Kenya", price: 27.42, image: coffee8 },
-  { name: "Espresso Con Panna Coffee", country: "Columbia", price: 23.55, image: coffee9 },
-  { name: "Frappuccino Coffee", country: "Kenya", price: 9, image: coffee10 },
-  { name: "Black Coffee", country: "Columbia", price: 11.2, image: coffee11 },
+  { name: "Espresso Coffee", country: "Brazil", price: 6.99, image: coffee1, id: 1 },
+  { name: "Americano Coffee", country: "Kenya", price: 10.25, image: coffee2, id: 2 },
+  { name: "Espresso Lungo Coffee", country: "Kenya", price: 11, image: coffee3, id: 3 },
+  { name: "Ristretto Coffee", country: "Columbia", price: 5, image: coffee4, id: 4 },
+  { name: "Cafe Au Lait Coffee", country: "Brazil", price: 22, image: coffee5, id: 5 },
+  { name: "Cappuccino Coffee", country: "Brazil", price: 16.4, image: coffee6, id: 6 },
+  { name: "Flat White Coffee", country: "Columbia", price: 12.5, image: coffee7, id: 7 },
+  { name: "Macchiato Coffee", country: "Kenya", price: 27.42, image: coffee8, id: 8 },
+  { name: "Espresso Con Panna Coffee", country: "Columbia", price: 23.55, image: coffee9, id: 9 },
+  { name: "Frappuccino Coffee", country: "Kenya", price: 9, image: coffee10, id: 10 },
+  { name: "Black Coffee", country: "Columbia", price: 11.2, image: coffee11, id: 11 },
 ];
 
 export default coffeeData;
