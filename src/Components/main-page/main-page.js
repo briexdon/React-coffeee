@@ -9,10 +9,10 @@ class MainPage extends Component {
   render() {
     return (
       <>
-        <HeaderMainPage></HeaderMainPage>
-        <AboutUs></AboutUs>
-        <OurBest></OurBest>
-        <Footer></Footer>
+        <HeaderMainPage />
+        <AboutUs />
+        <OurBest />
+        <Footer />
       </>
     );
   }

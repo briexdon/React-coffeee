@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 }
 
 .search-field > label {
@@ -51,7 +52,6 @@
 }
 
 .filter-field > button {
-  background: #ffffff;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
   border: 0;
   padding: 7px 20px;
@@ -62,13 +62,44 @@
   font-size: 12px;
   line-height: 17px;
   text-align: center;
-  color: #000000;
   cursor: pointer;
 }
 .brazil-coffee {
   margin-left: 35px;
+  background: #ffffff;
+  color: #000000;
 }
 .kenya-coffee {
   margin-left: 5px;
   margin-right: 5px;
+  background: #ffffff;
+  color: #000000;
+}
+.columbia-coffee {
+  background: #ffffff;
+  color: #000000;
+}
+
+.filter-input-hint {
+  font-family: "Merienda";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+
+  width: 180px;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: -45px;
+  box-shadow: 3px 5px 10px 1px rgb(54 54 54 / 10%);
+  border: solid 1px rgb(54 54 54 / 10%);
+  border-radius: 5px;
+  display: block;
+}
+
+.active-filter {
+  background: rgb(122, 93, 93);
+  color: #ffffff;
 }

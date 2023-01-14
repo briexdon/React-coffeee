@@ -5,9 +5,9 @@ import Footer from "../footer/footer";
 function CoffeeItemPage() {
   return (
     <>
-      <HeaderSecondaryPages></HeaderSecondaryPages>
-      <AboutCoffee></AboutCoffee>
-      <Footer></Footer>
+      <HeaderSecondaryPages />
+      <AboutCoffee />
+      <Footer />
     </>
   );
 }

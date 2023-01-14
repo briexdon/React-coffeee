@@ -1,13 +1,13 @@
 import "./header-secondary-pages.css";
 
-import whiteCoffeeBeans from "../../icons/main-page/coffee-beans.png";
+import doubleWhiteBeans from "../../icons/main-page/coffee-beans.png";
 
 function HeaderSecondaryPages({ headerTitle }) {
   return (
     <header className="header-secondary">
       <nav className="header-pages_secondary">
         <div className="coffee-house_secondary">
-          <img src={whiteCoffeeBeans} alt="coffee-beans_white" />
+          <img src={doubleWhiteBeans} alt="double white beans" />
           <a href="/">Coffee house</a>
         </div>
         <div className="our-coffee_secondary">

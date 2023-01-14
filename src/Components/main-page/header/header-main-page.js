@@ -1,14 +1,14 @@
 import "./header-main-page.css";
 
-import whiteCoffeeBeans from "../../../icons/main-page/coffee-beans.png";
-import whiteBeansLogo from "../../../icons/main-page/beans-logo.png";
+import doubleWhiteBeans from "../../../icons/main-page/coffee-beans.png";
+import threeWhiteBeans from "../../../icons/main-page/white-beans-logo.png";
 
 function HeaderMainPage() {
   return (
     <header className="header-main-page">
       <nav className="header-pages">
         <div className="coffee-house">
-          <img src={whiteCoffeeBeans} alt="coffee-beans_white" />
+          <img src={doubleWhiteBeans} alt="double white beans" />
           <a href="/">Coffee house</a>
         </div>
         <div className="header-our-coffee">
@@ -20,7 +20,7 @@ function HeaderMainPage() {
       </nav>
       <div className="header-descr">
         <h1 className="header-title">Everything You Love About Coffee</h1>
-        <img src={whiteBeansLogo} alt="white-beans-logo" />
+        <img src={threeWhiteBeans} alt="three-white-beans" />
         <div className="header-text">
           We makes every day full of energy and taste <br /> Want to try our beans?
         </div>

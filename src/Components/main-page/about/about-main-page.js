@@ -1,12 +1,12 @@
 import "./about-main-page.css";
 
-import blackBeansLogo from "../../../icons/main-page/beans-logo.png";
+import threeBlackBeans from "../../../icons/main-page/black-beans-logo.png";
 
 function AboutUs() {
   return (
     <section className="about-us">
       <h2 className="about-title">About Us</h2>
-      <img src={blackBeansLogo} alt="black-beans-logo" />
+      <img src={threeBlackBeans} alt="three-black-beans" />
       <div className="about-text">
         <p>
           Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid

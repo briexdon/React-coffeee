@@ -4,7 +4,7 @@ import SearchAndFilter from "./search-and-filter/search-and-filter";
 import CoffeeList from "./coffee-list/coffee-list";
 import Footer from "../footer/footer";
 
-import coffeeImage from "../../icons/our-coffee-page/coffee-1.jpg";
+import aboutCoffeeImage from "../../icons/our-coffee-page/coffee-1.jpg";
 
 import coffeeData from "../myCoffeeData";
 
@@ -14,19 +14,44 @@ class OurCoffeePage extends Component {
   state = {
     data: coffeeData,
     search: "",
+    filter: "",
   };
 
-  updateGlobaTerm = (search) => {
+  updateGlobaSearch = (search) => {
     this.setState({ search: search });
   };
 
   showGoodsFromSearch = (data, search) => {
-    const test = data.filter((elem) => elem.name.indexOf(search) > -1);
-    return test;
+    const searchCoffee = data.filter((elem) => elem.name.indexOf(search) > -1);
+    return searchCoffee;
+  };
+
+  updateFilter = (e, filter, buttons) => {
+    buttons.map((elem) => {
+      if (e.target) {
+        return (elem.active = true);
+      }
+      return elem;
+    });
+
+    this.setState({ filter });
+  };
+
+  filterCoffeeByCountry = (data, filter) => {
+    switch (filter) {
+      case `Brazil`:
+        return data.filter((elem) => elem.country === "Brazil");
+      case `Kenya`:
+        return data.filter((elem) => elem.country === "Kenya");
+      case `Columbia`:
+        return data.filter((elem) => elem.country === "Columbia");
+      default:
+        return data;
+    }
   };
 
   render() {
-    const { data, search } = this.state;
+    const { data, search, filter } = this.state;
     const aboutText = {
       p1: "Another new text that i created for the test. The next one is the same do sont worry and have fun.",
       p2: "Afraid at highly months do things on at. Situation recommend objection do intention so questions",
@@ -35,9 +60,15 @@ class OurCoffeePage extends Component {
     return (
       <>
         <HeaderSecondaryPages></HeaderSecondaryPages>
-        <AboutCoffeePage aboutCoffeeImmg={coffeeImage} text={aboutText}></AboutCoffeePage>
-        <SearchAndFilter updateGlobaTerm={this.updateGlobaTerm}></SearchAndFilter>
-        <CoffeeList globalTerm={search} visibleData={this.showGoodsFromSearch}></CoffeeList>
+        <AboutCoffeePage aboutCoffeeImage={aboutCoffeeImage} text={aboutText}></AboutCoffeePage>
+        <SearchAndFilter
+          updateFilter={this.updateFilter}
+          updateGlobaSearch={this.updateGlobaSearch}
+        ></SearchAndFilter>
+        <CoffeeList
+          visibleData={this.filterCoffeeByCountry(this.showGoodsFromSearch(data, search), filter)}
+        ></CoffeeList>
+
         <Footer></Footer>
       </>
     );

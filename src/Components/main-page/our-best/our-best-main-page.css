@@ -24,7 +24,7 @@
   flex-direction: row;
   margin-top: 59px;
 }
-.our-best-goods > div {
+.our-best-goods > a {
   height: 240px;
   width: 220px;
   padding: 22px 20px 22px 23px;
@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: center;
 }
-.our-best-goods > div > img {
+.our-best-goods > a > img {
   margin-top: 25px;
   min-height: 140px;
 }

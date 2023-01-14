@@ -1,14 +1,14 @@
 import "./footer.css";
 
-import blackCoffeeBeans from "../../icons/main-page/coffee-beans.png";
-import blackBeansLogo from "../../icons/main-page/beans-logo.png";
+import doubleBlackBeans from "../../icons/main-page/black-coffee-beans.png";
+import threeBlackBeans from "../../icons/main-page/black-beans-logo.png";
 
 function Footer() {
   return (
     <footer className="footer">
       <nav className="footer-pages">
         <div className="footer-coffee-house">
-          <img src={blackCoffeeBeans} alt="coffee-beans_black" />
+          <img src={doubleBlackBeans} alt="double black beans" />
           <a href="/">Coffee house</a>
         </div>
         <div className="footer-our-coffee">
@@ -18,7 +18,7 @@ function Footer() {
           <a href="/ForYourPleasure">For your pleasure</a>
         </div>
       </nav>
-      <img src={blackBeansLogo} alt="black-beans-logo" />
+      <img src={threeBlackBeans} alt="three black beans" />
     </footer>
   );
 }

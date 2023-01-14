@@ -8,12 +8,9 @@
   align-items: center;
   align-content: center;
 }
-.footer-coffee-house > img {
-  filter: brightness(0);
-}
+
 .footer > img {
   margin-top: 41px;
-  filter: brightness(0);
 }
 
 .footer-pages {

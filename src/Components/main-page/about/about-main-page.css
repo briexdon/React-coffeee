@@ -15,7 +15,6 @@
   color: #000000;
 }
 .about-us > img {
-  filter: brightness(0);
   margin-top: 20px;
 }
 .about-text {
