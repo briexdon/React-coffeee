@@ -1,17 +1,15 @@
 import "./search-and-filter.css";
 
-import { Component, createRef } from "react";
+import { Component } from "react";
 
 class SearchAndFilter extends Component {
   state = {
     search: "",
-    buttons: [
-      { class: `brazil-coffee`, data: `Brazil`, text: `Brazil`, active: false },
-      { class: `kenya-coffee `, data: `Kenya`, text: `Kenya`, active: false },
-      { class: `columbia-coffee`, data: `Columbia`, text: `Columbia`, active: false },
+    buttonsArr: [
+      { data: "Brazil", label: "Brazil", highligh: false },
+      { data: "Kenya", label: "Kenya", highligh: false },
+      { data: "Columbia", label: "Columbia", highligh: false },
     ],
-    searchHint: false,
-    ref: createRef(),
   };
 
   upadateLocalSearch = (e) => {
@@ -19,45 +17,39 @@ class SearchAndFilter extends Component {
     this.props.updateGlobaSearch(e.target.value);
   };
 
-  renderButtons = (buttons) => {
-    const btns = [];
-    buttons.forEach((elem, i) => {
-      const element = (
+  render() {
+    const { search, buttonsArr } = this.state;
+
+    const changeBtnColor = (index, highligh) => {
+      this.setState(({ buttonsArr }) => {
+        const newArr = buttonsArr.map((elem, i) => {
+          if (i === index) {
+            return { ...elem, highligh: !highligh };
+          }
+          return elem;
+        });
+        return { buttonsArr: newArr };
+      });
+    };
+
+    const buttons = buttonsArr.map(({ data, label, highligh }, i) => {
+      const active = highligh;
+      const clazz = active ? "filter-light" : null;
+
+      return (
         <button
-          data={elem.data}
-          className={elem.class}
-          key={i}
-          onClick={(e) => {
-            this.props.updateFilter(e, e.target.getAttribute("data"), this.state.buttons);
-          }}
+          type="button"
+          data={data}
+          className={`btn-filter ${clazz}`}
+          key={data}
+          onClick={(e) =>
+            this.props.updateFilter(e.target.getAttribute("data"), changeBtnColor(i, highligh))
+          }
         >
-          {elem.text}
+          {label}
         </button>
       );
-      btns.push(element);
     });
-    return btns;
-  };
-
-  changeButtonsProperty = (buttons, searchHint, test) => {
-    buttons.forEach((elem) => {
-      if (elem.active) {
-        return (elem.class += " active-filter");
-      }
-    });
-
-    // console.log(test);
-    // if (searchHint === true) {
-    //   test.style.display = "block";
-    // } else {
-    //   test.style.display = "none";
-    // }
-  };
-
-  render() {
-    const { search, buttons, searchHint } = this.state;
-    // const refHint = createRef();
-    this.changeButtonsProperty(buttons, searchHint, this.state.ref);
 
     return (
       <section className="search-and-filter">
@@ -74,9 +66,10 @@ class SearchAndFilter extends Component {
             !No results were found for this query
           </div>
         </div>
+
         <div className="filter-field">
           <label>Or filter</label>
-          {this.renderButtons(buttons)}
+          {buttons}
         </div>
       </section>
     );

@@ -26,15 +26,8 @@ class OurCoffeePage extends Component {
     return searchCoffee;
   };
 
-  updateFilter = (e, filter, buttons) => {
-    buttons.map((elem) => {
-      if (e.target) {
-        return (elem.active = true);
-      }
-      return elem;
-    });
-
-    this.setState({ filter });
+  updateFilter = (filter) => {
+    this.setState({ filter: filter });
   };
 
   filterCoffeeByCountry = (data, filter) => {

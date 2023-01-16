@@ -4,7 +4,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 30px;
 }
 
 .search-field {
@@ -64,20 +63,21 @@
   text-align: center;
   cursor: pointer;
 }
-.brazil-coffee {
-  margin-left: 35px;
+
+.btn-filter {
   background: #ffffff;
   color: #000000;
 }
-.kenya-coffee {
+.btn-filter:nth-child(1) {
+  margin-left: 35px;
+}
+.btn-filter:nth-child(2) {
   margin-left: 5px;
   margin-right: 5px;
-  background: #ffffff;
-  color: #000000;
 }
-.columbia-coffee {
-  background: #ffffff;
-  color: #000000;
+.filter-light {
+  background: rgb(122 93 93);
+  color: #ffffff;
 }
 
 .filter-input-hint {

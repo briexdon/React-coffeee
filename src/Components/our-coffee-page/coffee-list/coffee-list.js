@@ -1,7 +1,7 @@
 import "./coffee-list.css";
 import { Component } from "react";
 
-import CoffeeCard from "../../coffeeCard";
+import CoffeeCard from "./coffeeCard";
 
 class CoffeeList extends Component {
   render() {
