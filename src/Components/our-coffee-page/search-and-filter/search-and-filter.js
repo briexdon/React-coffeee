@@ -34,7 +34,7 @@ class SearchAndFilter extends Component {
 
     const buttons = buttonsArr.map(({ data, label, highligh }, i) => {
       const active = highligh;
-      const clazz = active ? "filter-light" : null;
+      const clazz = active ? "filter-light" : ``;
 
       return (
         <button

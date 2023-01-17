@@ -14,7 +14,7 @@ class OurCoffeePage extends Component {
   state = {
     data: coffeeData,
     search: "",
-    filter: "",
+    filter: [],
   };
 
   updateGlobaSearch = (search) => {
@@ -26,20 +26,58 @@ class OurCoffeePage extends Component {
     return searchCoffee;
   };
 
-  updateFilter = (filter) => {
-    this.setState({ filter: filter });
+  updateFilter = (filterAttr) => {
+    const checkFilter = this.state.filter.find((elem) => elem === filterAttr);
+
+    if (checkFilter) {
+      this.setState(({ filter }) => {
+        return {
+          filter: filter.filter((elem) => elem !== filterAttr),
+        };
+      });
+    } else {
+      this.setState(({ filter }) => {
+        return {
+          filter: [...filter, filterAttr],
+        };
+      });
+    }
   };
 
   filterCoffeeByCountry = (data, filter) => {
-    switch (filter) {
-      case `Brazil`:
-        return data.filter((elem) => elem.country === "Brazil");
-      case `Kenya`:
-        return data.filter((elem) => elem.country === "Kenya");
-      case `Columbia`:
-        return data.filter((elem) => elem.country === "Columbia");
-      default:
-        return data;
+    const countries = [];
+
+    function compareCountries(a, b) {
+      if (a.country < b.country) {
+        return -1;
+      }
+      if (a.country > b.country) {
+        return 1;
+      }
+      return 0;
+    }
+
+    filter.forEach((elem) => {
+      countries.push(elem);
+    });
+
+    if (countries.length > 0) {
+      const newData = data.filter((elem) => {
+        let findCountry;
+
+        countries.forEach((el) => {
+          if (elem.country === el) {
+            findCountry = el;
+          }
+        });
+
+        return elem.country === findCountry;
+      });
+
+      return newData.sort(compareCountries);
+    } else {
+      // .sort((a, b) => b.price - a.price);
+      return data.sort(compareCountries);
     }
   };
 
