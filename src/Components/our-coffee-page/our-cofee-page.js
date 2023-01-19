@@ -54,6 +54,12 @@ class OurCoffeePage extends Component {
       if (a.country > b.country) {
         return 1;
       }
+      if (b.price < a.price) {
+        return -1;
+      }
+      if (b.price > a.price) {
+        return 1;
+      }
       return 0;
     }
 
@@ -76,7 +82,6 @@ class OurCoffeePage extends Component {
 
       return newData.sort(compareCountries);
     } else {
-      // .sort((a, b) => b.price - a.price);
       return data.sort(compareCountries);
     }
   };
@@ -95,6 +100,7 @@ class OurCoffeePage extends Component {
         <SearchAndFilter
           updateFilter={this.updateFilter}
           updateGlobaSearch={this.updateGlobaSearch}
+          data={coffeeData}
         ></SearchAndFilter>
         <CoffeeList
           visibleData={this.filterCoffeeByCountry(this.showGoodsFromSearch(data, search), filter)}

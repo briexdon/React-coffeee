@@ -1,6 +1,6 @@
 import "./search-and-filter.css";
 
-import { Component } from "react";
+import { Component, createRef } from "react";
 
 class SearchAndFilter extends Component {
   state = {
@@ -12,13 +12,32 @@ class SearchAndFilter extends Component {
     ],
   };
 
-  upadateLocalSearch = (e) => {
-    this.setState({ search: e.target.value });
-    this.props.updateGlobaSearch(e.target.value);
+  upadateLocalSearch = (e, hint, data) => {
+    const term = e.target.value;
+    const checkData = data.find((elem) => elem.name.indexOf(term) > -1);
+
+    if (term.length > 50) {
+      e.target.style.border = "solid 1px red";
+      hint.current.style.display = "block";
+      hint.current.innerHTML = "Name cant be longer than 50 symbols";
+      return;
+    } else {
+      e.target.style.border = "none";
+      if (checkData) {
+        hint.current.style.display = "none";
+      } else {
+        hint.current.style.display = "block";
+        hint.current.innerHTML = "!No results were found for this query";
+      }
+    }
+
+    this.setState({ search: term });
+    this.props.updateGlobaSearch(term);
   };
 
   render() {
     const { search, buttonsArr } = this.state;
+    const hint = createRef();
 
     const changeBtnColor = (index, highligh) => {
       this.setState(({ buttonsArr }) => {
@@ -57,14 +76,12 @@ class SearchAndFilter extends Component {
           <label htmlFor="coffee">Looking for</label>
           <input
             value={search}
-            onChange={(e) => this.upadateLocalSearch(e)}
+            onChange={(e) => this.upadateLocalSearch(e, hint, this.props.data)}
             type="text"
             placeholder="start typing here..."
             id="coffee"
           />
-          <div ref={this.state.ref} className="filter-input-hint">
-            !No results were found for this query
-          </div>
+          <div ref={hint} className="input-hint"></div>
         </div>
 
         <div className="filter-field">

@@ -80,7 +80,12 @@
   color: #ffffff;
 }
 
-.filter-input-hint {
+.active-filter {
+  background: rgb(122, 93, 93);
+  color: #ffffff;
+}
+
+.input-hint {
   font-family: "Merienda";
   font-style: normal;
   font-weight: 400;
@@ -96,10 +101,5 @@
   box-shadow: 3px 5px 10px 1px rgb(54 54 54 / 10%);
   border: solid 1px rgb(54 54 54 / 10%);
   border-radius: 5px;
-  display: block;
-}
-
-.active-filter {
-  background: rgb(122, 93, 93);
-  color: #ffffff;
+  display: none;
 }
