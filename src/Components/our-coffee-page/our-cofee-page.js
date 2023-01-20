@@ -14,7 +14,7 @@ class OurCoffeePage extends Component {
   state = {
     data: coffeeData,
     search: "",
-    filter: [],
+    filter: JSON.parse(localStorage.getItem(`filter`)) || [],
   };
 
   updateGlobaSearch = (search) => {
@@ -26,27 +26,30 @@ class OurCoffeePage extends Component {
     return searchCoffee;
   };
 
-  updateFilter = (filterAttr) => {
-    const checkFilter = this.state.filter.find((elem) => elem === filterAttr);
+  updateFilter = (coffeeCountry) => {
+    const checkFilter = this.state.filter.find((elem) => elem === coffeeCountry);
 
     if (checkFilter) {
       this.setState(({ filter }) => {
+        localStorage.setItem(
+          `filter`,
+          JSON.stringify(filter.filter((elem) => elem !== coffeeCountry))
+        );
         return {
-          filter: filter.filter((elem) => elem !== filterAttr),
+          filter: filter.filter((elem) => elem !== coffeeCountry),
         };
       });
     } else {
       this.setState(({ filter }) => {
+        localStorage.setItem(`filter`, JSON.stringify([...filter, coffeeCountry]));
         return {
-          filter: [...filter, filterAttr],
+          filter: [...filter, coffeeCountry],
         };
       });
     }
   };
 
   filterCoffeeByCountry = (data, filter) => {
-    const countries = [];
-
     function compareCountries(a, b) {
       if (a.country < b.country) {
         return -1;
@@ -62,6 +65,8 @@ class OurCoffeePage extends Component {
       }
       return 0;
     }
+
+    const countries = [];
 
     filter.forEach((elem) => {
       countries.push(elem);

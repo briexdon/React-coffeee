@@ -5,7 +5,7 @@ import { Component, createRef } from "react";
 class SearchAndFilter extends Component {
   state = {
     search: "",
-    buttonsArr: [
+    buttonsArr: JSON.parse(localStorage.getItem(`color`)) || [
       { data: "Brazil", label: "Brazil", highligh: false },
       { data: "Kenya", label: "Kenya", highligh: false },
       { data: "Columbia", label: "Columbia", highligh: false },
@@ -47,11 +47,14 @@ class SearchAndFilter extends Component {
           }
           return elem;
         });
+
+        localStorage.setItem(`color`, JSON.stringify(newArr));
+
         return { buttonsArr: newArr };
       });
     };
 
-    const buttons = buttonsArr.map(({ data, label, highligh }, i) => {
+    const buttons = buttonsArr.map(({ data, label, highligh }, index) => {
       const active = highligh;
       const clazz = active ? "filter-light" : ``;
 
@@ -62,7 +65,7 @@ class SearchAndFilter extends Component {
           className={`btn-filter ${clazz}`}
           key={data}
           onClick={(e) =>
-            this.props.updateFilter(e.target.getAttribute("data"), changeBtnColor(i, highligh))
+            this.props.updateFilter(e.target.getAttribute("data"), changeBtnColor(index, highligh))
           }
         >
           {label}
